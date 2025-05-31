@@ -1,0 +1,13 @@
+[db]
+host = "127.0.0.1"
+port = 3306
+username = "root"
+password = "my123"
+database = "seaorm"
+
+[cache]
+host = "127.0.0.1"
+port = 123
+
+[jwt]
+secret = "hello23546532"

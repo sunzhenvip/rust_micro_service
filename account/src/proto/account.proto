@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package account;
+
+service Account {
+    rpc GetUsersByUids (AccountRequest) returns (AccountReply) {}
+}
+
+message AccountRequest {
+    repeated uint32 uid = 1;
+}
+
+message AccountReply {
+    message User {
+        uint32 uid = 1;
+        uint32 level = 2;
+        uint32 follow_count = 3;
+        uint32 fans_count = 4;
+        string nickname = 5;
+        string avatar = 6;
+    }
+    repeated User users = 1;
+}

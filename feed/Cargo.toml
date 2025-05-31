@@ -1,0 +1,39 @@
+[package]
+name = "feed"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tools = {path = "../tools"}
+anyhow = "1.0.75"
+arraystring = "0.3.0"
+axum = { version = "0.6.20", features = ["headers"] }
+chrono = "0.4.31"
+jsonwebtoken = "9.1.0"
+prost = "0.12.4"
+regex = { version = "1.10.2", features = [] }
+rust-crypto = "0.2.36"
+sea-orm = { version = "0.12.6", features = ["sqlx-mysql", "macros", "runtime-tokio-native-tls"] }
+serde = { version = "1.0.192", features = ["derive"] }
+serde_json = "1.0.108"
+tokio = { version = "1.34.0", features = ["full"] }
+toml = "0.8.8"
+tonic = "0.11.0"
+tower-http = { version = "0.4.4", features = ["trace", "cors"] }
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+validator = { version = "0.16.1", features = ["derive"] }
+rand = "0.8.5"
+tower = "0.4.13"
+etcd-client = "0.12.4"
+snowflaker = "0.3.5"
+crc32fast = "1.4.0"
+
+hyper = "0.14"
+opentelemetry = "0.22.0"
+opentelemetry-otlp = { version = "0.15.0", features = ["tonic", "default"] }
+opentelemetry-semantic-conventions = "0.14.0"
+opentelemetry-stdout = { version = "0.3.0", features = ["trace"] }
+opentelemetry_sdk = { version = "0.22.1", features = ["rt-tokio"] }
