@@ -113,7 +113,7 @@ pub async fn get_users_by_uids_service(uids: Vec<u32>) -> Result<Vec<RspUser>>{
 
     //获取redis
     let client = Client::connect("127.0.0.1:16379").await?;
-    let mut unredis_uids = HashSet::new();
+    let mut unredis_uids = std::collections::HashSet::new();
     for uid in uncached_uids {
         let r: Result<BulkString, rustis::Error> = client.get(format!("act_{:?}", uid).as_str()).await;
         if let Ok(bulk) = r {
@@ -149,9 +149,9 @@ pub async fn get_users_by_uids_service(uids: Vec<u32>) -> Result<Vec<RspUser>>{
         let serialized = serde_json::to_vec(&rsp_user)?;
         let _ = client.set_with_options(
             format!("act_{}", user.uid),
-            serialized,
+            serialized, // 序列化之后的值
             SetCondition::None,
-            SetExpiration::Ex(60 * 60),
+            SetExpiration::Ex(60 * 60), // 过期时间
             false).await;
 
         LOCAL_CACHE.get().unwrap().insert(user.uid, rsp_user.clone());
