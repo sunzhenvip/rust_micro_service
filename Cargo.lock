@@ -266,33 +266,6 @@ dependencies = [
  "tower-service",
 ]
 
-[[package]]
-name = "axum_weibo"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "axum",
- "chrono",
- "jsonwebtoken",
- "md-5",
- "nom",
- "prost",
- "rand 0.8.5",
- "regex 1.10.4",
- "sea-orm",
- "sentinel-core",
- "serde",
- "serde_json",
- "time 0.3.36",
- "tokio",
- "toml",
- "tonic 0.11.0",
- "tonic-build 0.11.0",
- "tower-http",
- "tracing",
- "tracing-subscriber",
- "validator",
-]
 
 [[package]]
 name = "backtrace"
