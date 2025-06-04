@@ -1,7 +1,7 @@
 [workspace]
 resolver="2"
 members=[
-    "axum_weibo1",
+    "axum_weibo",
     "tools",
     "account",
     "feed",
